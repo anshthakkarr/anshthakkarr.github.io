@@ -117,7 +117,28 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--text-primary);
-    animation: fadeInUp 0.8s ease-out;
+    letter-spacing: 0.02em;
+    min-height: 4rem;
+    position: relative;
+}
+
+.handwriting-text {
+    font-family: 'Kalam', cursive;
+    font-size: 4rem;
+    color: var(--text-primary);
+    position: relative;
+    display: inline-block;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    animation: handwriting 5s ease-out forwards;
+}
+
+@keyframes handwriting {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
 }
 
 .home-description {
