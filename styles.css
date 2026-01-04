@@ -236,6 +236,17 @@ body {
     font-weight: 600;
 }
 
+.experience-company a {
+    color: var(--primary-color);
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.experience-company a:hover {
+    transform: scale(1.05);
+}
+
 .experience-details {
     margin-top: 1rem;
     padding-left: 1.5rem;
@@ -442,5 +453,59 @@ body {
 
     .page-title {
         font-size: 2rem;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-copyright {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-social-link {
+    color: var(--text-secondary);
+    transition: color 0.2s, transform 0.2s;
+}
+
+.footer-social-link:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-copyright {
+        order: 2;
+    }
+
+    .footer-social-links {
+        order: 1;
     }
 }
