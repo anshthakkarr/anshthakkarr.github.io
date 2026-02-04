@@ -10,4 +10,4 @@ python3 -m http.server 8000
 ```
 Open http://localhost:8000
 
-**Deploy:** Push to main. GitHub Pages serves the repo directly. Uses `.nojekyll` to skip Jekyll processing.
+**Deployment:** GitHub Pages serves the repo directly. Uses `.nojekyll` to skip Jekyll processing.
