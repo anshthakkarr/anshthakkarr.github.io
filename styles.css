@@ -320,9 +320,10 @@ body {
 
 .project-image-slot {
     width: 100%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 1265/798;
     background-color: var(--border-color);
     flex-shrink: 0;
+    overflow: hidden;
 }
 
 .project-image-slot img {
