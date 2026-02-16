@@ -1,6 +1,6 @@
 # anshthakkarr.github.io
 
-Personal website.
+My personal website.
 
 **Tech:** HTML, CSS, JavaScript. Static site with no build step.
 
