@@ -4,7 +4,7 @@ My personal website.
 
 **Tech:** HTML, CSS, JavaScript. Static site with no build step.
 
-**Run locally:**
+**To run locally:**
 ```bash
 python3 -m http.server 8000
 ```
