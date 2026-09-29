@@ -1,46 +1,15 @@
-// Theme Toggle - Dark mode is default
+// Theme Toggle - Dark mode is default. The initial class is set by an inline
+// script in each page's <head> so the page doesn't flash on load.
 document.addEventListener('DOMContentLoaded', function() {
-    // Check localStorage, default to dark mode if not set
-    const savedTheme = localStorage.getItem('theme');
-    
-    // Default to dark mode
-    if (savedTheme === null || savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-        localStorage.setItem('theme', 'dark');
-    } else {
-        document.body.classList.remove('dark-mode');
-    }
-
-    // Update icon visibility
-    function updateIcons() {
-        const isDark = document.body.classList.contains('dark-mode');
-        const sunIcons = document.querySelectorAll('.sun-icon');
-        const moonIcons = document.querySelectorAll('.moon-icon');
-        
-        sunIcons.forEach(icon => {
-            icon.style.display = isDark ? 'none' : 'block';
-        });
-        moonIcons.forEach(icon => {
-            icon.style.display = isDark ? 'block' : 'none';
-        });
-    }
-
-    // Initial icon update
-    updateIcons();
-
-    // Theme toggle button
+    const root = document.documentElement;
     const themeToggle = document.querySelector('.theme-toggle');
+
     if (themeToggle) {
+        themeToggle.setAttribute('aria-pressed', String(!root.classList.contains('light')));
         themeToggle.addEventListener('click', function() {
-            const isDark = document.body.classList.contains('dark-mode');
-            if (isDark) {
-                document.body.classList.remove('dark-mode');
-                localStorage.setItem('theme', 'light');
-            } else {
-                document.body.classList.add('dark-mode');
-                localStorage.setItem('theme', 'dark');
-            }
-            updateIcons();
+            const isLight = root.classList.toggle('light');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            themeToggle.setAttribute('aria-pressed', String(!isLight));
         });
     }
 });
@@ -51,25 +20,89 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.querySelector('.nav-menu');
 
     if (hamburger && navMenu) {
+        function setOpen(open) {
+            navMenu.classList.toggle('active', open);
+            hamburger.classList.toggle('active', open);
+            hamburger.setAttribute('aria-expanded', String(open));
+        }
+
         hamburger.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
+            setOpen(!navMenu.classList.contains('active'));
         });
 
         // Close menu when clicking on a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
+                setOpen(false);
             });
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
+                setOpen(false);
             }
         });
     }
+});
+
+// Scroll reveal
+document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('.reveal');
+    if (!items.length) return;
+
+    items.forEach(el => {
+        const siblings = Array.from(el.parentElement.children).filter(c => c.classList.contains('reveal'));
+        el.style.setProperty('--delay', (siblings.indexOf(el) % 6) * 90 + 'ms');
+    });
+
+    function show(el) {
+        el.classList.add('is-visible');
+        // Drop the reveal classes afterwards so hover transitions use their own timing
+        setTimeout(() => {
+            el.classList.remove('reveal', 'is-visible');
+            el.style.removeProperty('--delay');
+        }, 1300);
+    }
+
+    if (!('IntersectionObserver' in window)) {
+        items.forEach(show);
+        return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                show(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    items.forEach(el => observer.observe(el));
+});
+
+// Home page CMOS inverter: click to flip the input
+document.addEventListener('DOMContentLoaded', function() {
+    const inverter = document.querySelector('.inverter');
+    if (!inverter) return;
+
+    const inVal = inverter.querySelector('.val-in');
+    const outVal = inverter.querySelector('.val-out');
+
+    function toggle() {
+        const next = inverter.dataset.in === '1' ? '0' : '1';
+        inverter.dataset.in = next;
+        inVal.textContent = next;
+        outVal.textContent = next === '1' ? '0' : '1';
+        inverter.setAttribute('aria-pressed', String(next === '1'));
+    }
+
+    inverter.addEventListener('click', toggle);
+    inverter.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggle();
+        }
+    });
 });
