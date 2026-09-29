@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ansh Thakkar</title>
+    <script>
+        document.documentElement.classList.add('js');
+        try { if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light'); } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="/" class="nav-logo">Ansh Thakkar</a>
+            <a href="/" class="nav-logo"><span class="logo-chip" aria-hidden="true">AT</span>Ansh Thakkar</a>
             <div class="nav-right">
                 <ul class="nav-menu">
-                    <li><a href="/about/" class="nav-link">About</a></li>
-                    <li><a href="/experiences/" class="nav-link">Experience</a></li>
-                    <li><a href="/projects/" class="nav-link">Projects</a></li>
-                    <li><a href="/coursework/" class="nav-link">Coursework</a></li>
-                    <li><a href="/blog/" class="nav-link active">Blog</a></li>
+                    <li><a href="/about/" class="nav-link"><span class="nav-index">01</span>About</a></li>
+                    <li><a href="/experiences/" class="nav-link"><span class="nav-index">02</span>Experience</a></li>
+                    <li><a href="/projects/" class="nav-link"><span class="nav-index">03</span>Projects</a></li>
+                    <li><a href="/coursework/" class="nav-link"><span class="nav-index">04</span>Coursework</a></li>
+                    <li><a href="/blog/" class="nav-link active"><span class="nav-index">05</span>Blog</a></li>
                 </ul>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>
                         <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -30,26 +37,39 @@
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon" style="display: block;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
             </div>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <main class="page-container">
         <div class="page-content">
-            <h1 class="page-title">Blog</h1>
+            <header class="page-header">
+                <p class="page-eyebrow">05 / Blog</p>
+                <h1 class="page-title">Blog</h1>
+            </header>
             <div class="blog-content">
-                <div style="text-align: center; padding: 4rem 2rem;">
-                    <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--text-primary);">Coming Soon</h2>
-                    <p style="font-size: 1.2rem; color: var(--text-secondary);">Blog posts are on the way. Check back soon!</p>
+                <div class="terminal reveal">
+                    <div class="terminal-bar">
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-title">~/blog</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p class="terminal-line"><span class="prompt">$</span>ls posts/</p>
+                        <h2>Coming Soon</h2>
+                        <p class="terminal-message">Blog posts are on the way. Check back soon!</p>
+                        <p class="terminal-line"><span class="prompt">$</span><span class="cursor"></span></p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ansh Thakkar</title>
+    <script>
+        document.documentElement.classList.add('js');
+        try { if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light'); } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="/" class="nav-logo">Ansh Thakkar</a>
+            <a href="/" class="nav-logo"><span class="logo-chip" aria-hidden="true">AT</span>Ansh Thakkar</a>
             <div class="nav-right">
                 <ul class="nav-menu">
-                    <li><a href="/about/" class="nav-link">About</a></li>
-                    <li><a href="/experiences/" class="nav-link">Experience</a></li>
-                    <li><a href="/projects/" class="nav-link">Projects</a></li>
-                    <li><a href="/coursework/" class="nav-link active">Coursework</a></li>
-                    <li><a href="/blog/" class="nav-link">Blog</a></li>
+                    <li><a href="/about/" class="nav-link"><span class="nav-index">01</span>About</a></li>
+                    <li><a href="/experiences/" class="nav-link"><span class="nav-index">02</span>Experience</a></li>
+                    <li><a href="/projects/" class="nav-link"><span class="nav-index">03</span>Projects</a></li>
+                    <li><a href="/coursework/" class="nav-link active"><span class="nav-index">04</span>Coursework</a></li>
+                    <li><a href="/blog/" class="nav-link"><span class="nav-index">05</span>Blog</a></li>
                 </ul>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>
                         <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -30,48 +37,56 @@
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon" style="display: block;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
             </div>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <main class="page-container">
         <div class="page-content">
-            <h1 class="page-title">Relevant Coursework</h1>
+            <header class="page-header">
+                <p class="page-eyebrow">04 / Coursework</p>
+                <h1 class="page-title">Relevant Coursework</h1>
+            </header>
             <div class="coursework-content">
-                <div class="coursework-section">
-                    <h2>Current Coursework</h2>
-                    <ul class="course-list">
-                        <li><span class="course-code">CS 152</span> - Computer Architecture and Engineering</li>
-                        <li><span class="course-code">EE 140</span> - Linear Integrated Circuits</li>
-                        <li><span class="course-code">CS 168</span> - Introduction to the Internet: Architecture and Protocols</li>
-
+                <section class="coursework-section reveal">
+                    <div class="section-heading">
+                        <h2>Current Coursework</h2>
+                        <span class="section-status"><span class="led"></span>In progress</span>
+                    </div>
+                    <ul class="course-list course-list--current">
+                        <li class="spotlight"><span class="course-code">CS 152</span><span class="course-name">Computer Architecture and Engineering</span></li>
+                        <li class="spotlight"><span class="course-code">EE 140</span><span class="course-name">Linear Integrated Circuits</span></li>
+                        <li class="spotlight"><span class="course-code">CS 168</span><span class="course-name">Introduction to the Internet: Architecture and Protocols</span></li>
                     </ul>
-                </div>
+                </section>
 
-                <div class="coursework-section">
-                    <h2>Past Coursework</h2>
+                <section class="coursework-section reveal">
+                    <div class="section-heading">
+                        <h2>Past Coursework</h2>
+                        <span class="section-status">Completed</span>
+                    </div>
                     <ul class="course-list">
-                        <li><span class="course-code">EECS 151</span> - Introduction to Digital Design and Integrated Circuits</li>
-                        <li><span class="course-code">EECS 151LA</span> - Application Specific Integrated Circuits (ASIC) Laboratory</li>
-                        <li><span class="course-code">EECS 144</span> - Introduction to Design Automation</li>
-                        <li><span class="course-code">EE 105</span> - Microelectronic Devices and Circuits</li>
-                        <li><span class="course-code">CS 61C</span> - Great Ideas in Computer Architecture (Machine Structures)</li>
-                        <li><span class="course-code">EECS 16B</span> - Introduction to Circuits and Devices</li>
-                        <li><span class="course-code">EECS 16A</span> - Foundations of Signals, Dynamical Systems, and Information Processing</li>
-                        <li><span class="course-code">CS 70</span> - Discrete Mathematics and Probability Theory</li>
-                        <li><span class="course-code">CS 61B</span> - Data Structures</li>
-                        <li><span class="course-code">CS 61A</span> - Structure and Interpretation of Computer Programs</li>
+                        <li class="spotlight"><span class="course-code">EECS 151</span><span class="course-name">Introduction to Digital Design and Integrated Circuits</span></li>
+                        <li class="spotlight"><span class="course-code">EECS 151LA</span><span class="course-name">Application Specific Integrated Circuits (ASIC) Laboratory</span></li>
+                        <li class="spotlight"><span class="course-code">EECS 144</span><span class="course-name">Introduction to Design Automation</span></li>
+                        <li class="spotlight"><span class="course-code">EE 105</span><span class="course-name">Microelectronic Devices and Circuits</span></li>
+                        <li class="spotlight"><span class="course-code">CS 61C</span><span class="course-name">Great Ideas in Computer Architecture (Machine Structures)</span></li>
+                        <li class="spotlight"><span class="course-code">EECS 16B</span><span class="course-name">Introduction to Circuits and Devices</span></li>
+                        <li class="spotlight"><span class="course-code">EECS 16A</span><span class="course-name">Foundations of Signals, Dynamical Systems, and Information Processing</span></li>
+                        <li class="spotlight"><span class="course-code">CS 70</span><span class="course-name">Discrete Mathematics and Probability Theory</span></li>
+                        <li class="spotlight"><span class="course-code">CS 61B</span><span class="course-name">Data Structures</span></li>
+                        <li class="spotlight"><span class="course-code">CS 61A</span><span class="course-name">Structure and Interpretation of Computer Programs</span></li>
                     </ul>
-                </div>
+                </section>
             </div>
         </div>
     </main>
@@ -105,4 +120,3 @@
     <script src="../script.js"></script>
 </body>
 </html>
-

@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ansh Thakkar</title>
+    <script>
+        document.documentElement.classList.add('js');
+        try { if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light'); } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="/" class="nav-logo">Ansh Thakkar</a>
+            <a href="/" class="nav-logo"><span class="logo-chip" aria-hidden="true">AT</span>Ansh Thakkar</a>
             <div class="nav-right">
                 <ul class="nav-menu">
-                    <li><a href="/about/" class="nav-link">About</a></li>
-                    <li><a href="/experiences/" class="nav-link">Experience</a></li>
-                    <li><a href="/projects/" class="nav-link active">Projects</a></li>
-                    <li><a href="/coursework/" class="nav-link">Coursework</a></li>
-                    <li><a href="/blog/" class="nav-link">Blog</a></li>
+                    <li><a href="/about/" class="nav-link"><span class="nav-index">01</span>About</a></li>
+                    <li><a href="/experiences/" class="nav-link"><span class="nav-index">02</span>Experience</a></li>
+                    <li><a href="/projects/" class="nav-link active"><span class="nav-index">03</span>Projects</a></li>
+                    <li><a href="/coursework/" class="nav-link"><span class="nav-index">04</span>Coursework</a></li>
+                    <li><a href="/blog/" class="nav-link"><span class="nav-index">05</span>Blog</a></li>
                 </ul>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>
                         <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -30,77 +37,85 @@
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon" style="display: block;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
             </div>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <main class="page-container">
         <div class="page-content">
-            <h1 class="page-title">Projects</h1>
+            <header class="page-header">
+                <p class="page-eyebrow">03 / Projects</p>
+                <h1 class="page-title">Projects</h1>
+            </header>
             <div class="projects-grid">
 
-                <div class="project-card">
+                <article class="project-card spotlight reveal">
                     <div class="project-image-slot">
                         <img src="/images/eco-airflow.png" alt="ECO Generation for PD Flows">
                     </div>
                     <div class="project-card-body">
-                    <h2>ECO Generation for PD Flows</h2>
-                    <div class="project-tech">
-                        <span class="tech-badge">SystemVerilog</span>
-                        <span class="tech-badge">Tcl</span>
-                        <span class="tech-badge">Cadence Conformal</span>
+                        <span class="project-index">P/01</span>
+                        <h2>ECO Generation for PD Flows</h2>
+                        <p>Proof of concept ECO generation and verification stage to be integrated into physical design flows</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">SystemVerilog</span>
+                            <span class="tech-badge">Tcl</span>
+                            <span class="tech-badge">Cadence Conformal</span>
+                        </div>
                     </div>
-                    <p>Proof of concept ECO generation and verification stage to be integrated into physical design flows</p>
-                    </div>
-                </div>
-                
-                <div class="project-card">
+                </article>
+
+                <article class="project-card spotlight reveal">
                     <div class="project-image-slot">
                         <img src="/images/risc-v-cpu.png" alt="RISC-V CPU">
                     </div>
                     <div class="project-card-body">
-                    <h2>RISC-V CPU</h2>
-                    <div class="project-tech">
-                        <span class="tech-badge">SystemVerilog</span>
+                        <span class="project-index">P/02</span>
+                        <h2>RISC-V CPU</h2>
+                        <p>3-stage pipelined CPU with I/D caches, CSRs, forwarding, branch prediction, and hazard handling</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">SystemVerilog</span>
+                        </div>
                     </div>
-                    <p>3-stage pipelined CPU with I/D caches, CSRs, forwarding, branch prediction, and hazard handling</p>
-                    </div>
-                </div>
+                </article>
 
-                <div class="project-card">
+                <article class="project-card spotlight reveal">
                     <div class="project-image-slot">
                         <img src="/images/sdr-schematic.png" alt="SDR Receiver">
                     </div>
                     <div class="project-card-body">
-                    <h2>Software Defined Radio</h2>
-                    <div class="project-tech">
-                        <span class="tech-badge">Altium Designer</span>
+                        <span class="project-index">P/03</span>
+                        <h2>Software Defined Radio</h2>
+                        <p>Custom PCB with RF front-end and signal down-conversion to 10-12KHz intermediate frequency</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Altium Designer</span>
+                        </div>
                     </div>
-                    <p>Custom PCB with RF front-end and signal down-conversion to 10-12KHz intermediate frequency</p>
-                    </div>
-                </div>
+                </article>
 
-                <div class="project-card">
+                <article class="project-card spotlight reveal">
                     <div class="project-image-slot">
                         <img src="/images/nerf-turret-schematic.png" alt="Autonomous Nerf Turret">
                     </div>
                     <div class="project-card-body">
-                    <h2>Autonomous Nerf Turret</h2>
-                    <div class="project-tech">
-                        <span class="tech-badge">KiCad</span>
+                        <span class="project-index">P/04</span>
+                        <h2>Autonomous Nerf Turret</h2>
+                        <p>Custom ESP32-based PCB and AI-driven targeting system with real-time vision and motor control</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">KiCad</span>
+                        </div>
                     </div>
-                    <p>Custom ESP32-based PCB and AI-driven targeting system with real-time vision and motor control</p>
-                    </div>
-                </div>
+                </article>
+
             </div>
         </div>
     </main>
