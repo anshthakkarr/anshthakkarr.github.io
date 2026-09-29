@@ -82,20 +82,31 @@ document.addEventListener('DOMContentLoaded', function() {
     items.forEach(el => observer.observe(el));
 });
 
-// Home page CMOS inverter: click to flip the input
+// Home page CMOS inverter: its output picks the theme (1 = paper, 0 = blueprint)
 document.addEventListener('DOMContentLoaded', function() {
     const inverter = document.querySelector('.inverter');
     if (!inverter) return;
 
+    const root = document.documentElement;
     const inVal = inverter.querySelector('.val-in');
     const outVal = inverter.querySelector('.val-out');
 
+    function setInput(bit) {
+        const out = bit === '1' ? '0' : '1';
+        inverter.dataset.in = bit;
+        inVal.textContent = bit;
+        outVal.textContent = out;
+        inverter.setAttribute('aria-pressed', String(bit === '1'));
+        return out;
+    }
+
+    setInput(root.classList.contains('light') ? '0' : '1');
+
     function toggle() {
-        const next = inverter.dataset.in === '1' ? '0' : '1';
-        inverter.dataset.in = next;
-        inVal.textContent = next;
-        outVal.textContent = next === '1' ? '0' : '1';
-        inverter.setAttribute('aria-pressed', String(next === '1'));
+        const out = setInput(inverter.dataset.in === '1' ? '0' : '1');
+        const isLight = out === '1';
+        root.classList.toggle('light', isLight);
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
     }
 
     inverter.addEventListener('click', toggle);
