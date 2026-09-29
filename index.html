@@ -10,156 +10,97 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="home">
+    <div class="sheet-frame" aria-hidden="true">
+        <div class="zones zones-top"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
+        <div class="zones zones-bottom"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
+        <div class="zones zones-left"><span>A</span><span>B</span><span>C</span><span>D</span></div>
+        <div class="zones zones-right"><span>A</span><span>B</span><span>C</span><span>D</span></div>
+    </div>
+
     <nav class="navbar">
         <div class="nav-container">
-            <a href="/" class="nav-logo"><span class="logo-chip" aria-hidden="true">AT</span>Ansh Thakkar</a>
+            <a href="/" class="nav-logo">Ansh <em>Thakkar</em></a>
             <div class="nav-right">
                 <ul class="nav-menu">
-                    <li><a href="/about/" class="nav-link"><span class="nav-index">01</span>About</a></li>
-                    <li><a href="/experiences/" class="nav-link"><span class="nav-index">02</span>Experience</a></li>
-                    <li><a href="/projects/" class="nav-link"><span class="nav-index">03</span>Projects</a></li>
-                    <li><a href="/coursework/" class="nav-link"><span class="nav-index">04</span>Coursework</a></li>
-                    <li><a href="/blog/" class="nav-link"><span class="nav-index">05</span>Blog</a></li>
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                    <li><a href="/experiences/" class="nav-link">Experience</a></li>
+                    <li><a href="/projects/" class="nav-link">Projects</a></li>
+                    <li><a href="/coursework/" class="nav-link">Coursework</a></li>
+                    <li><a href="/blog/" class="nav-link">Blog</a></li>
                 </ul>
-                <button class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
+                <button class="theme-toggle" aria-label="Toggle dark mode"><span class="tt-dark">Blueprint</span><span class="tt-light">Paper</span></button>
             </div>
-            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span class="menu-open">Menu</span><span class="menu-close">Close</span></button>
         </div>
     </nav>
 
     <main class="home-container">
-        <div class="hero-text">
-            <p class="hero-eyebrow"><span class="led"></span>hello, world</p>
-            <h1 class="home-name"><span>Ansh</span><span class="outline">Thakkar</span></h1>
-            <p class="home-description">EECS @ UC Berkeley</p>
-            <div class="social-links">
-                <a href="mailto:ansh.thakkar@berkeley.edu" class="social-link primary" aria-label="Email">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    Email
-                </a>
-                <a href="https://github.com/anshthakkarr" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                    GitHub
-                </a>
-                <a href="https://linkedin.com/in/ansh-thakkar" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                    LinkedIn
-                </a>
-            </div>
-        </div>
+        <h1 class="home-name">Ansh <em>Thakkar</em></h1>
 
-        <div class="hero-art" aria-hidden="true">
-            <svg class="chip-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <pattern id="die-grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                        <path class="die-grid-line" d="M10 0H0V10"></path>
-                    </pattern>
-                </defs>
+        <figure class="hero-figure">
+            <svg class="inverter" data-in="0" viewBox="0 0 340 340" role="button" tabindex="0" aria-pressed="false" aria-label="CMOS inverter. Click to flip the input." xmlns="http://www.w3.org/2000/svg">
+                <path class="wire p-side" pathLength="1" d="M205 40H265"></path>
+                <text class="label" x="272" y="44">VDD</text>
 
-                <g class="traces">
-                    <path class="trace" d="M163 118V96L133 66V26"></path>
-                    <path class="trace" d="M193 118V44"></path>
-                    <path class="trace" d="M223 118V90L253 60V34"></path>
-                    <path class="trace" d="M253 118V104L277 80V50"></path>
-                    <path class="trace" d="M148 118V108L120 80V48"></path>
+                <path class="wire channel p-side" pathLength="1" d="M205 100V150" style="--d: .5s"></path>
+                <path class="wire p-side" pathLength="1" d="M205 106H235V40" style="--d: .4s"></path>
+                <path class="wire p-side" pathLength="1" d="M205 144H235V180" style="--d: .6s"></path>
+                <path class="wire" pathLength="1" d="M193 106V144" style="--d: .5s"></path>
+                <circle class="wire" pathLength="1" cx="187" cy="125" r="5" style="--d: .6s"></circle>
+                <text class="label" x="246" y="129">M1</text>
 
-                    <path class="trace" d="M282 163H304L334 133H374"></path>
-                    <path class="trace" d="M282 193H356"></path>
-                    <path class="trace" d="M282 223H310L340 253H366"></path>
-                    <path class="trace" d="M282 253H296L320 277H350"></path>
-                    <path class="trace" d="M282 148H292L320 120H352"></path>
+                <path class="wire channel n-side" pathLength="1" d="M205 210V260" style="--d: .7s"></path>
+                <path class="wire n-side" pathLength="1" d="M205 216H235V180" style="--d: .8s"></path>
+                <path class="wire n-side" pathLength="1" d="M205 254H235V300" style="--d: .8s"></path>
+                <path class="wire" pathLength="1" d="M193 216V254" style="--d: .7s"></path>
+                <path class="wire n-side" pathLength="1" d="M215 300H255M222 308H248M229 316H241" style="--d: 1s"></path>
+                <text class="label" x="246" y="239">M2</text>
 
-                    <path class="trace" d="M237 282V304L267 334V374"></path>
-                    <path class="trace" d="M207 282V356"></path>
-                    <path class="trace" d="M177 282V310L147 340V366"></path>
-                    <path class="trace" d="M147 282V296L123 320V350"></path>
-                    <path class="trace" d="M252 282V292L280 320V352"></path>
+                <path class="wire in-side" pathLength="1" d="M182 125H120V235H193" style="--d: .9s"></path>
+                <path class="wire in-side" pathLength="1" d="M120 180H57" style="--d: 1.1s"></path>
+                <circle class="node in-node" cx="120" cy="180" r="3.5"></circle>
+                <circle class="terminal terminal-in" cx="50" cy="180" r="7"></circle>
+                <text class="label" x="50" y="208" text-anchor="middle">IN</text>
+                <text class="val val-in" x="50" y="162" text-anchor="middle">0</text>
 
-                    <path class="trace" d="M118 237H96L66 267H26"></path>
-                    <path class="trace" d="M118 207H44"></path>
-                    <path class="trace" d="M118 177H90L60 147H34"></path>
-                    <path class="trace" d="M118 147H104L80 123H50"></path>
-                    <path class="trace" d="M118 252H108L80 280H48"></path>
-                </g>
-
-                <g class="pulses">
-                    <path class="pulse" pathLength="100" d="M163 118V96L133 66V26"></path>
-                    <path class="pulse alt" pathLength="100" d="M253 118V104L277 80V50" style="animation-delay: -1.2s"></path>
-                    <path class="pulse alt" pathLength="100" d="M282 193H356" style="animation-delay: -2.1s"></path>
-                    <path class="pulse" pathLength="100" d="M282 223H310L340 253H366" style="animation-delay: -0.6s"></path>
-                    <path class="pulse" pathLength="100" d="M237 282V304L267 334V374" style="animation-delay: -2.7s"></path>
-                    <path class="pulse alt" pathLength="100" d="M147 282V296L123 320V350" style="animation-delay: -1.6s"></path>
-                    <path class="pulse" pathLength="100" d="M118 207H44" style="animation-delay: -0.3s"></path>
-                    <path class="pulse alt" pathLength="100" d="M118 147H104L80 123H50" style="animation-delay: -2.4s"></path>
-                </g>
-
-                <g class="vias">
-                    <circle class="via" cx="133" cy="26" r="4"></circle>
-                    <circle class="via" cx="193" cy="44" r="4"></circle>
-                    <circle class="via" cx="253" cy="34" r="4"></circle>
-                    <circle class="via" cx="277" cy="50" r="4"></circle>
-                    <circle class="via" cx="120" cy="48" r="4"></circle>
-                    <circle class="via" cx="374" cy="133" r="4"></circle>
-                    <circle class="via" cx="356" cy="193" r="4"></circle>
-                    <circle class="via" cx="366" cy="253" r="4"></circle>
-                    <circle class="via" cx="350" cy="277" r="4"></circle>
-                    <circle class="via" cx="352" cy="120" r="4"></circle>
-                    <circle class="via" cx="267" cy="374" r="4"></circle>
-                    <circle class="via" cx="207" cy="356" r="4"></circle>
-                    <circle class="via" cx="147" cy="366" r="4"></circle>
-                    <circle class="via" cx="123" cy="350" r="4"></circle>
-                    <circle class="via" cx="280" cy="352" r="4"></circle>
-                    <circle class="via" cx="26" cy="267" r="4"></circle>
-                    <circle class="via" cx="44" cy="207" r="4"></circle>
-                    <circle class="via" cx="34" cy="147" r="4"></circle>
-                    <circle class="via" cx="50" cy="123" r="4"></circle>
-                    <circle class="via" cx="48" cy="280" r="4"></circle>
-                </g>
-
-                <path class="pins" d="M148 118V130M163 118V130M178 118V130M193 118V130M208 118V130M223 118V130M238 118V130M253 118V130
-                    M148 270V282M163 270V282M178 270V282M193 270V282M208 270V282M223 270V282M238 270V282M253 270V282
-                    M118 148H130M118 163H130M118 178H130M118 193H130M118 208H130M118 223H130M118 238H130M118 253H130
-                    M270 148H282M270 163H282M270 178H282M270 193H282M270 208H282M270 223H282M270 238H282M270 253H282"></path>
-
-                <rect class="die" x="130" y="130" width="140" height="140" rx="10"></rect>
-                <rect class="die-core" x="150" y="150" width="100" height="100" rx="4"></rect>
-                <circle class="die-dot" cx="142" cy="142" r="3"></circle>
-                <text class="die-label" x="200" y="207" text-anchor="middle">AT</text>
-                <text class="die-sub" x="200" y="226" text-anchor="middle">EECS·UCB</text>
-                <text class="ref-label" x="130" y="296">U1</text>
+                <path class="wire out-side" pathLength="1" d="M235 180H293" style="--d: 1.1s"></path>
+                <circle class="node out-node" cx="235" cy="180" r="3.5"></circle>
+                <circle class="terminal terminal-out" cx="300" cy="180" r="7"></circle>
+                <text class="label" x="300" y="208" text-anchor="middle">OUT</text>
+                <text class="val val-out" x="300" y="162" text-anchor="middle">1</text>
             </svg>
+            <figcaption><span class="fig-num">Fig. 1</span> A CMOS inverter. Click it to flip the input.</figcaption>
+        </figure>
+
+        <div class="title-block">
+            <div class="tb-cell tb-span-2">
+                <span class="tb-label">Title</span>
+                <p class="home-description">EECS @ UC Berkeley</p>
+            </div>
+            <div class="tb-cell">
+                <span class="tb-label">Rev</span>
+                <span class="tb-value">2026</span>
+            </div>
+            <div class="tb-cell tb-span-3">
+                <span class="tb-label">Email</span>
+                <a href="mailto:ansh.thakkar@berkeley.edu" class="tb-link">ansh.thakkar@berkeley.edu</a>
+            </div>
+            <div class="tb-cell">
+                <span class="tb-label">GitHub</span>
+                <a href="https://github.com/anshthakkarr" target="_blank" rel="noopener noreferrer" class="tb-link">anshthakkarr</a>
+            </div>
+            <div class="tb-cell">
+                <span class="tb-label">LinkedIn</span>
+                <a href="https://linkedin.com/in/ansh-thakkar" target="_blank" rel="noopener noreferrer" class="tb-link">ansh-thakkar</a>
+            </div>
+            <div class="tb-cell">
+                <span class="tb-label">Sheet</span>
+                <span class="tb-value">1 of 6</span>
+            </div>
         </div>
     </main>
 
@@ -167,24 +108,9 @@
         <div class="footer-container">
             <div class="footer-copyright">© 2026 Ansh Thakkar</div>
             <div class="footer-social-links">
-                <a href="mailto:ansh.thakkar@berkeley.edu" class="footer-social-link" aria-label="Email">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                </a>
-                <a href="https://github.com/anshthakkarr" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                </a>
-                <a href="https://linkedin.com/in/ansh-thakkar" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                </a>
+                <a href="mailto:ansh.thakkar@berkeley.edu" class="footer-social-link">Email</a>
+                <a href="https://github.com/anshthakkarr" target="_blank" rel="noopener noreferrer" class="footer-social-link">GitHub</a>
+                <a href="https://linkedin.com/in/ansh-thakkar" target="_blank" rel="noopener noreferrer" class="footer-social-link">LinkedIn</a>
             </div>
         </div>
     </footer>

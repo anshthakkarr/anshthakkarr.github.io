@@ -10,109 +10,99 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+    <div class="sheet-frame" aria-hidden="true">
+        <div class="zones zones-top"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
+        <div class="zones zones-bottom"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
+        <div class="zones zones-left"><span>A</span><span>B</span><span>C</span><span>D</span></div>
+        <div class="zones zones-right"><span>A</span><span>B</span><span>C</span><span>D</span></div>
+    </div>
+
     <nav class="navbar">
         <div class="nav-container">
-            <a href="/" class="nav-logo"><span class="logo-chip" aria-hidden="true">AT</span>Ansh Thakkar</a>
+            <a href="/" class="nav-logo">Ansh <em>Thakkar</em></a>
             <div class="nav-right">
                 <ul class="nav-menu">
-                    <li><a href="/about/" class="nav-link"><span class="nav-index">01</span>About</a></li>
-                    <li><a href="/experiences/" class="nav-link"><span class="nav-index">02</span>Experience</a></li>
-                    <li><a href="/projects/" class="nav-link active"><span class="nav-index">03</span>Projects</a></li>
-                    <li><a href="/coursework/" class="nav-link"><span class="nav-index">04</span>Coursework</a></li>
-                    <li><a href="/blog/" class="nav-link"><span class="nav-index">05</span>Blog</a></li>
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                    <li><a href="/experiences/" class="nav-link">Experience</a></li>
+                    <li><a href="/projects/" class="nav-link active">Projects</a></li>
+                    <li><a href="/coursework/" class="nav-link">Coursework</a></li>
+                    <li><a href="/blog/" class="nav-link">Blog</a></li>
                 </ul>
-                <button class="theme-toggle" aria-label="Toggle dark mode">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
+                <button class="theme-toggle" aria-label="Toggle dark mode"><span class="tt-dark">Blueprint</span><span class="tt-light">Paper</span></button>
             </div>
-            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span class="menu-open">Menu</span><span class="menu-close">Close</span></button>
         </div>
     </nav>
 
     <main class="page-container">
         <div class="page-content">
             <header class="page-header">
-                <p class="page-eyebrow">03 / Projects</p>
                 <h1 class="page-title">Projects</h1>
+                <p class="sheet-no">Sheet<strong>4 of 6</strong></p>
             </header>
-            <div class="projects-grid">
+            <div class="projects-list">
 
-                <article class="project-card spotlight reveal">
+                <article class="project reveal">
                     <div class="project-image-slot">
                         <img src="/images/eco-airflow.png" alt="ECO Generation for PD Flows">
                     </div>
-                    <div class="project-card-body">
-                        <span class="project-index">P/01</span>
+                    <div class="project-text">
+                        <span class="project-no">01</span>
                         <h2>ECO Generation for PD Flows</h2>
                         <p>Proof of concept ECO generation and verification stage to be integrated into physical design flows</p>
-                        <div class="project-tech">
-                            <span class="tech-badge">SystemVerilog</span>
-                            <span class="tech-badge">Tcl</span>
-                            <span class="tech-badge">Cadence Conformal</span>
-                        </div>
+                        <dl class="project-tech">
+                            <dt>Tools</dt>
+                            <dd>SystemVerilog, Tcl, Cadence Conformal</dd>
+                        </dl>
                     </div>
                 </article>
 
-                <article class="project-card spotlight reveal">
+                <article class="project reveal">
                     <div class="project-image-slot">
                         <img src="/images/risc-v-cpu.png" alt="RISC-V CPU">
                     </div>
-                    <div class="project-card-body">
-                        <span class="project-index">P/02</span>
+                    <div class="project-text">
+                        <span class="project-no">02</span>
                         <h2>RISC-V CPU</h2>
                         <p>3-stage pipelined CPU with I/D caches, CSRs, forwarding, branch prediction, and hazard handling</p>
-                        <div class="project-tech">
-                            <span class="tech-badge">SystemVerilog</span>
-                        </div>
+                        <dl class="project-tech">
+                            <dt>Tools</dt>
+                            <dd>SystemVerilog</dd>
+                        </dl>
                     </div>
                 </article>
 
-                <article class="project-card spotlight reveal">
+                <article class="project reveal">
                     <div class="project-image-slot">
                         <img src="/images/sdr-schematic.png" alt="SDR Receiver">
                     </div>
-                    <div class="project-card-body">
-                        <span class="project-index">P/03</span>
+                    <div class="project-text">
+                        <span class="project-no">03</span>
                         <h2>Software Defined Radio</h2>
                         <p>Custom PCB with RF front-end and signal down-conversion to 10-12KHz intermediate frequency</p>
-                        <div class="project-tech">
-                            <span class="tech-badge">Altium Designer</span>
-                        </div>
+                        <dl class="project-tech">
+                            <dt>Tools</dt>
+                            <dd>Altium Designer</dd>
+                        </dl>
                     </div>
                 </article>
 
-                <article class="project-card spotlight reveal">
+                <article class="project reveal">
                     <div class="project-image-slot">
                         <img src="/images/nerf-turret-schematic.png" alt="Autonomous Nerf Turret">
                     </div>
-                    <div class="project-card-body">
-                        <span class="project-index">P/04</span>
+                    <div class="project-text">
+                        <span class="project-no">04</span>
                         <h2>Autonomous Nerf Turret</h2>
                         <p>Custom ESP32-based PCB and AI-driven targeting system with real-time vision and motor control</p>
-                        <div class="project-tech">
-                            <span class="tech-badge">KiCad</span>
-                        </div>
+                        <dl class="project-tech">
+                            <dt>Tools</dt>
+                            <dd>KiCad</dd>
+                        </dl>
                     </div>
                 </article>
 
@@ -124,24 +114,9 @@
         <div class="footer-container">
             <div class="footer-copyright">© 2026 Ansh Thakkar</div>
             <div class="footer-social-links">
-                <a href="mailto:ansh.thakkar@berkeley.edu" class="footer-social-link" aria-label="Email">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                </a>
-                <a href="https://github.com/anshthakkarr" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                </a>
-                <a href="https://linkedin.com/in/ansh-thakkar" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                </a>
+                <a href="mailto:ansh.thakkar@berkeley.edu" class="footer-social-link">Email</a>
+                <a href="https://github.com/anshthakkarr" target="_blank" rel="noopener noreferrer" class="footer-social-link">GitHub</a>
+                <a href="https://linkedin.com/in/ansh-thakkar" target="_blank" rel="noopener noreferrer" class="footer-social-link">LinkedIn</a>
             </div>
         </div>
     </footer>

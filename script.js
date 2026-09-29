@@ -5,9 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.querySelector('.theme-toggle');
 
     if (themeToggle) {
+        themeToggle.setAttribute('aria-pressed', String(!root.classList.contains('light')));
         themeToggle.addEventListener('click', function() {
             const isLight = root.classList.toggle('light');
             localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            themeToggle.setAttribute('aria-pressed', String(!isLight));
         });
     }
 });
@@ -80,13 +82,27 @@ document.addEventListener('DOMContentLoaded', function() {
     items.forEach(el => observer.observe(el));
 });
 
-// Cursor-following highlight on cards
+// Home page CMOS inverter: click to flip the input
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.spotlight').forEach(card => {
-        card.addEventListener('pointermove', function(event) {
-            const rect = card.getBoundingClientRect();
-            card.style.setProperty('--mx', (event.clientX - rect.left) + 'px');
-            card.style.setProperty('--my', (event.clientY - rect.top) + 'px');
-        });
+    const inverter = document.querySelector('.inverter');
+    if (!inverter) return;
+
+    const inVal = inverter.querySelector('.val-in');
+    const outVal = inverter.querySelector('.val-out');
+
+    function toggle() {
+        const next = inverter.dataset.in === '1' ? '0' : '1';
+        inverter.dataset.in = next;
+        inVal.textContent = next;
+        outVal.textContent = next === '1' ? '0' : '1';
+        inverter.setAttribute('aria-pressed', String(next === '1'));
+    }
+
+    inverter.addEventListener('click', toggle);
+    inverter.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggle();
+        }
     });
 });
