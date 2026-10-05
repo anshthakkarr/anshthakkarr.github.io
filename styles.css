@@ -236,16 +236,15 @@ body {
     mask: var(--ellipse) center / 100% 100% no-repeat;
 }
 
+/* Mini NMOS: conducting (lit) on blueprint, off on paper, matching the home inverter */
 .theme-toggle {
-    display: inline-flex;
-    padding: 2px;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
     border: 1px solid var(--rule);
     background: none;
     cursor: pointer;
-    font-family: var(--mono);
-    font-size: 0.64rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
     color: var(--ink-dim);
     transition: border-color 0.2s;
 }
@@ -254,20 +253,35 @@ body {
     border-color: var(--ink);
 }
 
-.theme-toggle span {
-    padding: 0.3rem 0.55rem;
-    transition: background-color 0.2s, color 0.2s;
+.theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    overflow: visible;
 }
 
-.tt-dark,
-html.light .tt-light {
-    background-color: var(--ink);
-    color: var(--bg);
+.theme-toggle path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: square;
+    transition: stroke 0.25s;
 }
 
-html.light .tt-dark {
-    background-color: transparent;
-    color: var(--ink-dim);
+.theme-toggle .tx-channel {
+    stroke-width: 2.5;
+    stroke-linecap: butt;
+}
+
+.theme-toggle .tx-on {
+    stroke: var(--accent);
+}
+
+html.light .theme-toggle .tx-on {
+    stroke: currentColor;
+}
+
+html.light .theme-toggle .tx-channel {
+    stroke-dasharray: 3 2.5;
 }
 
 .hamburger {
@@ -1224,10 +1238,6 @@ body.home footer {
     .tb-span-2,
     .tb-span-3 {
         grid-column: span 2;
-    }
-
-    .theme-toggle span {
-        padding: 0.3rem 0.4rem;
     }
 }
 
